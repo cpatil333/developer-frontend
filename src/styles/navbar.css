@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  background-color: purple;
+  width: 95%;
+  height: 50px;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}
+ul li {
+  list-style-type: none;
+  display: inline;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  float: left;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+}
+table {
+  margin: auto;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-color: white;
+}
+
+table thead tr {
+  background-color: black;
+  color: white;
+}
+
+table tbody tr td {
+  border: 1px solid grey;
+}
+
+.loginDiv {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid black;
+  text-align: center;
+}
+input,
+select {
+  width: 50%;
+  height: 30px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 18px;
+}
+button {
+  background-color: purple;
+  color: white;
+  width: 10%;
+  height: 40px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.editbtn {
+  margin: 5px;
+  background-color: purple;
+  color: white;
+  width: 50%;
+  height: 20px;
+  padding: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.deletebtn {
+  margin: 5px;
+  background-color: red;
+  color: white;
+  width: 40%;
+  height: 40px;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
