@@ -9,8 +9,7 @@ const Login = () => {
   const [formData, setFormData] = useState({});
   const [LoginInput, { data, loading, error }] = useMutation(GET_LOGIN, {
     onCompleted(data) {
-      alert("Login successfully!");
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.userLogin.token);
       navigate("/");
     },
   });

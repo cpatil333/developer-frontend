@@ -22,3 +22,13 @@ export const GET_USERS = gql`
     }
   }
 `;
+
+export const GET_POSTBY_ID = gql`
+query ($postById: ID!) {
+  postById(id: $postById) {
+    title
+    content
+    userId
+  }
+}
+`;

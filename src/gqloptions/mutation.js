@@ -25,4 +25,24 @@ mutation($newPost: PostInput!){
     title
     content
   }
+}`;
+
+export const UPDATE_PROFILE = gql`
+mutation($updateProfile: UserProfile!) {
+  updateProfile(updateProfile: $updateProfile) {
+    bio
+    skills
+    profilePic
+    github
+  }
+}`;
+
+export const UPDATE_POST = gql`
+mutation($updatePost: UpdatePostInput!){
+  updatePost(updatePost: $updatePost) {
+   title
+   content
+   userId
+  }
+}
 `;

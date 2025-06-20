@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_POST } from "../gqloptions/mutation";
-import { GET_USERS } from "../gqloptions/queries";
+import { GET_USERS, GET_POSTS } from "../gqloptions/queries";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const Posts = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Posts = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.targer.name]: e.targer.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -30,10 +30,14 @@ const Posts = () => {
     e.preventDefault();
     PostInput({
       variables: {
-        newPost: formData,
-        userId: parseInt(formData.userId),
+        newPost: {
+          ...formData,
+          userId: parseInt(formData.userId),
+        },
+        refetchQueries: [{ query: GET_POSTS }]
       },
     });
+    alert("Post data saved!");
   };
 
   return (
@@ -57,15 +61,16 @@ const Posts = () => {
               onChange={handleChange}
             />
           </div>
-          {/* <div> 
+          <div>
             <select name="userId" onChange={handleChange} required>
-              {userData.users.map((user) => (
+              <option value="0">Select User</option>
+              {userData?.users?.map((user) => (
                 <option key={user.id} value={user.id}>
-                  {user.name}
+                  {user.fullName}
                 </option>
               ))}
             </select>
-          </div> */}
+          </div>
           <button>Submit</button>
         </form>
       </div>
